@@ -4,10 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${titulo}">Document</title>
+    <title th:text="${titulo}"></title>
 </head>
 <body>
     <h1 th:text="${titulo}"></h1>
+     <form th:action="@{/form}" th:object="${empleado}" method="post">
+
+        <!-- <span th:if="${errors != null && #fields.hasErrors('id')}" th:errors ="*{id}"> debe llenar el campo</span> -->
+        <span th:if="${#fields.hasErrors('id')}" th:errors ="*{id}"> id incoorecto</span>
+        <label for="id" id="id">Id</label>
+        <input type="text" name="id" id="id" th:field="*{id}">
+
+        <!-- <span th:if="${errors != null && #fields.hasErrors('nombre')}" th:errors ="*{nombre}"> debe llenar el campo</span> -->
+        <span th:if="${#fields.hasErrors('nombre')}" th:errors ="*{nombre}"> Nombre incoorecto</span>
+        <label for="nombre" id="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" th:field="*{nombre}">
+
+        <!-- <span th:if="${errors != null && #fields.hasErrors('apellido')}" th:errors ="*{apellido}"> debe llenar el campo</span> -->
+        <span th:if="${#fields.hasErrors('apellido')}" th:errors ="*{apellido}"> Apellido incoorecto</span>
+        <label for="apellido" id="apellido">Apellido</label>
+        <input type="text" name="apellido" id="apellido" th:field="*{apellido}">
+
+        <label for="correo" id="correo">Correo</label>
+        <input type="email" name="correo" id="correo" th:field="*{correo}">
+
+        <!-- <span th:if="${errors != null && #fields.hasErrors('direccion')}" th:errors ="*{direccion}"> debe llenar el campo</span> -->
+        <span th:if="${#fields.hasErrors('direccion')}" th:errors ="*{direccion}"> Dirección incoorecto</span>
+        <label for="direccion" id="direccion">Dirección</label>
+        <input type="text" name="direccion" id="direccion" th:field="*{direccion}">
+
+        <!-- <span th:if="${errors != null && #fields.hasErrors('telefono')}" th:errors ="*{telefono}"> debe llenar el campo</span> -->
+        <span th:if="${#fields.hasErrors('telefono')}" th:errors ="*{telefono}"> Dirección incoorecto</span>
+        <label for="telefono" id="direccion">telefono</label>
+        <input type="text" name="telefono" id="telefono" th:field="*{telefono}">
+
+        <button type="submit">enviar</button>
+    </form> 
+
 
     
 </body>

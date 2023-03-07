@@ -1,25 +1,27 @@
 package com.parcial.parcial.models.entity;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 public class Empleado {
     
-    @NotEmpty(message = "El nombre no puede estar vacio")
+    @NotEmpty(message = "El id no puede estar vacio")
     private String id;
 
     @NotEmpty(message = "El nombre no puede estar vacio")
     private String nombre;
 
-    @NotEmpty(message = "El nombre no puede estar vacio")
+    @NotEmpty(message = "El apellido no puede estar vacio")
     private String apellido;
 
-    @NotEmpty(message = "El nombre no puede estar vacio")
+    @NotEmpty(message = "El correo no puede estar vacio")
     private String correo;
 
-    @NotEmpty(message = "El nombre no puede estar vacio")
+    @NotEmpty(message = "El direecion no puede estar vacio")
     private String direccion;
 
-    @NotEmpty(message = "El nombre no puede estar vacio")
+    @NotEmpty(message = "El telefono deve ser 10 digitos")
+    @Size(min = 10, max = 13)
     private String telefono;
 
 
